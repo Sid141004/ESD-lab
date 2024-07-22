@@ -1,0 +1,109 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT
+   10 00000000         Reset_Handler
+   11 00000000 4804            LDR              R0, =SRC
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004 6842            LDR              R2,[R0,#4]
+   14 00000006         STOP
+   15 00000006 E7FE            B                STOP
+   16 00000008 0000000A 
+                       NUM     EQU              10
+   17 00000008 00000008 
+              00123456 
+              020F76D3 SRC     DCD              8 , 0X123456 , 34567891
+   18 00000014                 END
+              00000000 
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=third.d 
+-othird.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\
+NXP\LPC17xx --predefine="__EVAL SETA 1" --list=third.lst third.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file third.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file third.asm
+   Uses
+      At line 2 in file third.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file third.asm
+   Uses
+      At line 5 in file third.asm
+Comment: Reset_Handler used once
+SRC 00000008
+
+Symbol: SRC
+   Definitions
+      At line 17 in file third.asm
+   Uses
+      At line 11 in file third.asm
+Comment: SRC used once
+STOP 00000006
+
+Symbol: STOP
+   Definitions
+      At line 14 in file third.asm
+   Uses
+      At line 15 in file third.asm
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file third.asm
+   Uses
+      None
+Comment: mycode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+NUM 0000000A
+
+Symbol: NUM
+   Definitions
+      At line 16 in file third.asm
+   Uses
+      None
+Comment: NUM unused
+1 symbol
+340 symbols in table
