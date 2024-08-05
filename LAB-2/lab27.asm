@@ -17,7 +17,7 @@ BACK LDR R4, [R0], #4
 	LDR R7, [R6], #4
 	ADCS R2,R4,R7
 	STR R2, [R5], #4
-	SUB R1, #1
+	SUB R1, #1;dont use subs or comp as it updates carry flag
 	TEQ R1, #0
 	BNE BACK
 
