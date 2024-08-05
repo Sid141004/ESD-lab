@@ -18,7 +18,7 @@ BACK LDR R4, [R0], #4
 	SUBS R1, #1
 	BNE BACK
 	
-	STR R2, [R5], #4
+	STR R2, [R5], #4;to take care of the final carry
 	STR R3, [R5]
 STOP B STOP
 SUM DCD 0,0
