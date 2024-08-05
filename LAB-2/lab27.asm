@@ -20,6 +20,7 @@ BACK LDR R4, [R0], #4
 	SUB R1, #1
 	TEQ R1, #0
 	BNE BACK
+
 	ADC R8, #0
 	STR R8, [R5]
 STOP B STOP
