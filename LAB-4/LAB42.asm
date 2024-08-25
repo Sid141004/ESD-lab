@@ -13,6 +13,6 @@ Reset_Handler
 	LSR R1, R0, #04
 	AND R2, R0, #0X0F
 	MOV R3, #0XA
-	MLA R2,R1,R3,R2
+	MLA R2,R1,R3,R2;R2=R2+(R1 x R3)
 STOP B STOP
 	END
