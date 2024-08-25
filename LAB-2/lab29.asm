@@ -8,3 +8,18 @@ __Vectors
 	ENTRY
 	EXPORT Reset_Handler
 Reset_Handler
+	MOV R3, #0
+	LDR R0, =N1
+	LDR R1, [R0]
+	LDR R0, =N2
+	LDR R2, [R0]
+BACK CMP R1,R2
+	BLO EXIT
+	SUB R1,R2
+	ADD R0, #1
+	B BACK
+EXIT ;STORE WHERVER.
+STOP B STOP
+N1 DCD #2000
+N2 DCD #3
+	END
