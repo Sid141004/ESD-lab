@@ -9,8 +9,12 @@ int main(){
 	SystemInit();
 	SystemCoreClockUpdate();
 	LPC_PINCON->PINSEL0=0;
+	LPC_PINCON->PINSEL3=0;
 	LPC_GPIO0->FIODIRL= 0XFF0;
+	LPC_GPIO1->FIODIR=0XF<<23;
+	LPC_GPIO1->FIOPIN=0;
 	while(1){
 	LPC_GPIO0->FIOPIN= seven_seg[6] << 4;
+	for(i=0;i<1000000;i++);
 	}
 }
