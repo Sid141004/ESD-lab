@@ -1,5 +1,5 @@
 #include<lpc17xx.h>
-int i;
+int i=0;
 int j;
 int x;
 //cnb-1->switch p2.12
@@ -26,6 +26,6 @@ int main(){
 				i=255;
 			}
 		}
-		for(j=0;j<100000;j++);
+		for(j=0;j<1000000;j++);
 	}
 }
